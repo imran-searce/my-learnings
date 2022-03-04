@@ -7,7 +7,7 @@ app = Flask(__name__)
 #route.decorator()
 @app.route("/")
 def home_page():
-    return "Welcome to the searce.!!"
+    return "Welcome to the Searce"
 
 @app.route("/Health")
 def status():
