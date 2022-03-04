@@ -8,6 +8,6 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'cicd-test', '--image', 'gcr.io/searce-playground/imran-flaskapp', '--region', 'us-central1']
+  args: ['run', 'deploy', 'imran-cicd', '--image', 'gcr.io/searce-playground/imran-flaskapp', '--region', 'us-central1']
 images:
 - gcr.io/searce-playground/imran-flaskapp
