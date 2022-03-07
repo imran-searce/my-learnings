@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/searce-playground/imran-flaskapp', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/searce-playground/imran-flaskapp']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'imran-cicd', '--image', 'gcr.io/searce-playground/imran-flaskapp', '--region', 'us-central1']
+images:
+- gcr.io/searce-playground/imran-flaskapp
